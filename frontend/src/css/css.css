@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.porciones{
+    font-size: 17px;
+    font-weight: bold;
+}
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: white;
+}
+.fa-solid{
+    color: rgb(255, 0, 0);
+}
+header .hero{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.postimg.cc/hj3WLtbC/Fondo-Torta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+.nav{
+    overflow-x: none !important;
+    position: fixed;
+    width: 100%;
+    /*height: 100px;
+    /*background: #FD6A00;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+.nav.active{
+    background-color: #f76905;
+    padding: 15px;
+}
+.nav.active a,
+.nav.active .menu-btn i{
+    color: rgb(255, 255, 255);
+    padding: 5px !;
+    
+}
+.nav.active a:hover{
+    background-color: green;
+    color: yellow;
+}
+.nav.active .logo-btn{
+    background-color: #f76905 !important;
+    color: rgb(255, 255, 255);
+}
+.logo button{
+    width: 250px;
+    height: 51px;
+    background-color: white;
+    border-radius: 100px;
+    background-image: url("https://i.postimg.cc/Kcwh44Yj/logo-Dulzura.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-size: contain;
+    transition: all 0.3s ease 0s;
+    margin-left: 25px;
+}
+.logo button:hover{
+    transform: scale(1.1);
+}
+.menu{
+    display: flex;
+}
+.menu li{
+    list-style: none;
+    margin: 10px;
+}
+.menu li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    padding: 3px;
+}
+.menu li :hover{
+    padding: 5px 10px;
+    background-color: green;
+    color: orange;
+    border-radius: 15px;
+    text-decoration: underline;
+}
+.menu-btn{
+    color: white;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.filters {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover {
+    color: yellow;
+}
+.filter-btn.active {
+    background-color: #f76905;
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: scale-down;
+}
+.card-content {
+    padding: 1.5rem;
+}
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+.card-description {
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+.card-links {
+    display: flex;
+    gap: 1rem;
+}
+.card-btn {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-bottom: 20px; 
+} 
+.card-btn:hover {
+    background-color: #f76905;
+}
+footer {
+    width: 100%;
+    background-color:#f76905;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    bottom: 0;
+    position: none;
+}
+@media (max-width: 746px){
+    .menu-btn{
+        display: block;
+        margin-right: 10px;
+    }
+    header .hero{
+        height: 60vh;
+    }
+    
+    .menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        background: #f76905;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        transform: translatex(-100%);
+        z-index: 1000;
+    }
+    .menu li{
+        margin: 15px 0;
+        display: flex;
+    }
+    
+    .btn-movil{
+        align-items: center;
+        flex-direction: column ;
+        padding: 10px;
+    }
+    .menu.active{
+        transform: translatex(0); 
+        flex-direction: column;
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+}
+@media (max-width: 395px){
+    .logo button{
+        width: 50%;
+        height: 51px;
+        background-color: white;
+        border-radius: 100px;
+        background-image: url('https://i.postimg.cc/Kcwh44Yj/logo-Dulzura.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        background-size: contain;
+        transition: all 0.3s ease 0s;
+        margin-left: 5px;
+    }
+    .menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        background: #f76905;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        transform: translatex(-100%);
+        z-index: 1000;
+    }
+    .nav{
+        padding-top: 15px;
+        padding-left: 2px;
+    }
+    .filters{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://kit.fontawesome.com/6a4cbeba68.js"crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dulzura Vallecaucana</title>
+        <link rel="stylesheet" href="./css/contacto.css" />
+        <link rel="shortcut icon" href="img/favicom.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav">
+            <div class="logo">
+                <a class="logo-btn" href="index.html"><button></button></a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">contactanos</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            </nav>
+            
+        </header>
+        <main>
+            <div class="espaciado"></div>
+            <div class="container">
+                <div class="contact-header">
+                    <h1>Contacto</h1>
+                    <p>¿Tienes preguntas? Y Quieres adquirir un producto ¡Estamos aquí para ayudarte!</p>
+                </div>
+        
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p>📍 Dirección: carrera 60 #26-38</p>
+                    <p>📞 Teléfono: 3195252639</p>
+                    <p>✉️ Email: dulzura.vallecaucana@gmail.com</p>
+                    <p>⏰ Horario: Lunes a Domingo de 8:00 AM a 6:00 PM</p>
+                </div>
+        
+                <div class="contact-form">
+                    <h3>Envíanos un mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <span class="error" id="nombreError">El nombre es requerido</span>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error" id="emailError">Email inválido</span>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" required>
+                            <span class="error" id="asuntoError">El asunto es requerido</span>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                            <span class="error" id="mensajeError">El mensaje es requerido</span>
+                        </div>
+        
+                        <button type="submit">Enviar mensaje</button>
+                    </form>
+                </div>
+        
+                <div class="social-links">
+                    <a href="http://wa.link/ztvomc" class="whatsapp" tittle="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="facebook" title="facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="twitter" title="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="instagram" title="instagram"><i class="fa-brands fa-square-instagram"></i></i></a>
+                
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Dulzura Vallecaucana Todos los derechos reservados.</p>
+        </footer>
+    
+    <script src="./js/script.js"></script>
+  </body>
+</html>
