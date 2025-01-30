@@ -1,259 +1,279 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /*overflow-x: hidden;*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*overflow-x: hidden;*/
 }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: white;
 }
-.nav{
-    overflow-x: none !important;
-    position: fixed;
-    width: 100%;
-    /*height: 100px;
+.nav {
+  overflow-x: none !important;
+  position: fixed;
+  width: 100%;
+  /*height: 100px;
     /*background: #FD6A00;*/
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    transition: all 0.5s ease;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  transition: all 0.5s ease;
+  z-index: 1000;
 }
-.nav.active{
-    background-color: #f76905;
-    padding: 15px;
+.nav.active {
+  background-color: #f76905;
+  padding: 15px;
 }
 .nav.active a,
-.nav.active .menu-btn i{
-    color: black;
-    padding: 5px;
+.nav.active .menu-btn i {
+  color: black;
+  padding: 5px;
 }
-.nav.active a:hover{
-    background-color: green;
-    color: yellow;
+.nav.active a:hover {
+  background-color: green;
+  color: yellow;
 }
-.nav.active .logo-btn{
-    background-color: #f76905 !important;
-    color: rgb(255, 255, 255);
+.nav.active .logo-btn {
+  background-color: #f76905 !important;
+  color: rgb(255, 255, 255);
 }
-.logo button{
-    width: 250px;
+.logo button {
+  width: 250px;
+  height: 51px;
+  background-color: white;
+  border-radius: 100px;
+  background-image: url("https://i.postimg.cc/Kcwh44Yj/logo-Dulzura.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-size: contain;
+  transition: all 0.3s ease 0s;
+  margin-left: 25px;
+}
+.logo button:hover {
+  background-color: #ffffff !important;
+  transform: scale(1.1);
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  list-style: none;
+  margin: 10px;
+}
+.menu li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+.menu li a:hover {
+  padding: 5px 10px;
+  background-color: green;
+  color: yellow;
+  border-radius: 15px;
+  text-decoration: underline;
+}
+.menu-btn {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+}
+.espaciado {
+  width: 100%;
+  height: 90px;
+}
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.contact-info {
+  background-color: #f7fafc;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+.Confirm-mensaje {
+    max-width: 800px;
+    margin: 2rem auto;
+    
+    padding: 1rem 1rem;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+    background-color: rgb(240, 240, 240);
+}
+.contact-info h3 {
+  color: #f76905;
+  margin-bottom: 1rem;
+}
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  font-weight: 500;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: f76905;
+  transform: scale(1.1);
+  background-color: green;
+  color: #f76905;
+}
+.error {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.social-links a {
+  color: #2c5282;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.map-container {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 300px;
+  background-color: #f7fafc;
+}
+footer {
+  width: 100%;
+  background-color: #f76905;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  position: none !important;
+}
+.whatsapp i {
+  color: #25d366;
+  font-size: 30px;
+}
+.facebook i {
+  color: #3b5998;
+  font-size: 30px;
+}
+.twitter i {
+  color: black;
+  font-size: 30px;
+}
+.instagram i {
+  font-size: 30px;
+  background-image: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  color: transparent;
+  background-clip: text;
+}
+@media (max-width: 746px) {
+  .menu-btn {
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    background: #f76905;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    transform: translatex(-100%);
+  }
+  .menu li {
+    margin: 15px 0;
+  }
+  .menu.active {
+    transform: translatex(0);
+  }
+}
+@media (max-width: 394px) {
+  .logo button {
+    width: 150px;
     height: 51px;
     background-color: white;
     border-radius: 100px;
-    background-image: url('https://i.postimg.cc/Kcwh44Yj/logo-Dulzura.png');
+    background-image: url("https://i.postimg.cc/Kcwh44Yj/logo-Dulzura.png");
     background-repeat: no-repeat;
     background-position: center;
     border: none;
     background-size: contain;
     transition: all 0.3s ease 0s;
-    margin-left: 25px;
-}
-.logo button:hover{
-    background-color: #ffffff !important;
-    transform: scale(1.1);
-}
-.menu{
+    margin-left: 5px;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background: #f76905;
     display: flex;
-}
-.menu li{
-    list-style: none;
-    margin: 10px;
-}
-.menu li a{
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.5s ease;
-}
-.menu li a:hover{
-    padding: 5px 10px;
-    background-color: green;
-    color: yellow;
-    border-radius: 15px;
-    text-decoration: underline;
-}
-.menu-btn{
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    display: none;
-    cursor: pointer;
-}
-.espaciado{
-    width: 100%;
-    height: 90px;
-}
-.container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-.contact-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.contact-info {
-    background-color: #f7fafc;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-}
-.contact-info h3 {
-    color: #f76905;
-    margin-bottom: 1rem;
-}
-.contact-form {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.form-group {
-    margin-bottom: 1.5rem;
-}
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #2d3748;
-    font-weight: 500;
-}
-input, textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #4299e1;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-}
-button {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 0.75rem 1.5rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-button:hover {
-    background-color: f76905;
-    transform: scale(1.1);
-    background-color: green;
-    color: #f76905;
-}
-.error {
-    color: #e53e3e;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    display: none;
-}
-.social-links {
-    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-.social-links a {
-    color: #2c5282;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-.map-container {
-    margin: 2rem 0;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 300px;
-    background-color: #f7fafc;
-}
-footer {
-    width: 100%;
-    background-color:#f76905;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
-    position: none !important; 
-}
-.whatsapp i{
-    color: #25d366;
-    font-size: 30px;
-}
-.facebook i{
-    color: #3b5998;
-    font-size: 30px;
-}
-.twitter i{
-    color: black;
-    font-size: 30px;
-}
-.instagram i{
-    font-size: 30px;
-    background-image: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    color: transparent;
-    background-clip: text;
-}
-@media (max-width: 746px){
-    .menu-btn{
-        display: block;
-    }
-    .menu{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        background: #f76905;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s ease;
-        transform: translatex(-100%);
-    }
-    .menu li{
-        margin: 15px 0;
-    }
-    .menu.active{
-        transform: translatex(0); 
-    }
-}
-@media (max-width: 394px){
-    .logo button{
-        width: 150px;
-        height: 51px;
-        background-color: white;
-        border-radius: 100px;
-        background-image: url('https://i.postimg.cc/Kcwh44Yj/logo-Dulzura.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        border: none;
-        background-size: contain;
-        transition: all 0.3s ease 0s;
-        margin-left: 5px;
-    }
-    .menu{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100vh;
-        background: #f76905;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s ease;
-        transform: translatex(-100%);
-    }
-    .nav{
-        padding-top: 15px;
-        padding-left: 2px;
-    }
+    transition: all 0.5s ease;
+    transform: translatex(-100%);
+  }
+  .nav {
+    padding-top: 15px;
+    padding-left: 2px;
+  }
 }

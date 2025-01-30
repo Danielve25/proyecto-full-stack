@@ -1,53 +1,24 @@
-import {useState} from "react";
-import {Link} from "react-router";
+import React from "react";
 import {useForm, ValidationError} from "@formspree/react";
-
-function Contacto() {
-    const [formData, setFormData] = useState({
-        nombre: "",
-        email: "",
-        asunto: "",
-        mensaje: "",
-    });
-
-    const [errors, setErrors] = useState({
-        nombre: false,
-        email: false,
-        asunto: false,
-        mensaje: false,
-    });
-
-    const handleInputChange = (e) => {
-        const {name, value} = e.target;
-        setFormData({...formData, [name]: value});
-        setErrors({...errors, [name]: false});
-    };
-
-    const validateForm = () => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const newErrors = {
-            nombre: formData.nombre.trim() === "",
-            email: !emailRegex.test(formData.email),
-            asunto: formData.asunto.trim() === "",
-            mensaje: formData.mensaje.trim() === "",
-        };
-        setErrors(newErrors);
-        return !Object.values(newErrors).some((error) => error);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (validateForm()) {
-            alert("Mensaje enviado correctamente!");
-            setFormData({nombre: "", email: "", asunto: "", mensaje: ""});
-        }
-    };
-
+import { Link } from "react-router";
+function ContactForm() {
+    const [state, handleSubmit, reset] = useForm(import.meta.env.VITE_FORM_ID);
+    if (state.succeeded) {
+        return (
+            <>
+                <div className="espaciado"></div>
+                <div className="Confirm-mensaje">
+                    <h1>gracias por elegirnos</h1>
+                    <button onClick={reset}>Enviar otro formulario</button>
+                </div>
+            </>
+        );
+    }
     return (
         <>
             <div className="espaciado"></div>
             <div className="container">
-                <div className="contact-header">
+                <div div className="contact-header">
                     <h1>Contacto</h1>
                     <p>¿Tienes preguntas? Y Quieres adquirir un producto ¡Estamos aquí para ayudarte!</p>
                 </div>
@@ -58,72 +29,24 @@ function Contacto() {
                     <p>✉️ Email: dulzura.vallecaucana@gmail.com</p>
                     <p>⏰ Horario: Lunes a Domingo de 8:00 AM a 6:00 PM</p>
                 </div>
+                <form onSubmit={handleSubmit}>
+                    {/*correo electronico */}
+                    <label htmlFor="email">Correo Electronico</label>
+                    <input id="email" type="email" name="email" />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+                    {/*Asunto del correo */}
+                    <label htmlFor="asunto">Asunto</label>
+                    <textarea name="asunto" id="asunto" />
+                    <ValidationError prefix="asunto" field="asunto" />
 
-                <div className="contact-form">
-                    <h3>Envíanos un mensaje</h3>
-                    <form
-                        action="https://formsubmit.co/dulzura.vallecaucana@gmail.com"
-                        method="POST"
-                        onSubmit={handleSubmit}
-                    >
-                        <div className="form-group">
-                            <label>Nombre completo</label>
-                            <input
-                                type="text"
-                                id="nombre"
-                                name="nombre"
-                                value={formData.nombre}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            {errors.nombre && <span className="error">El nombre es requerido</span>}
-                        </div>
-
-                        <div className="form-group">
-                            <label>Correo electrónico</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            {errors.email && <span className="error">Email inválido</span>}
-                        </div>
-
-                        <div className="form-group">
-                            <label>Asunto</label>
-                            <input
-                                type="text"
-                                id="asunto"
-                                name="asunto"
-                                value={formData.asunto}
-                                onChange={handleInputChange}
-                                required
-                            />
-                            {errors.asunto && <span className="error">El asunto es requerido</span>}
-                        </div>
-
-                        <div className="form-group">
-                            <label>Mensaje</label>
-                            <textarea
-                                id="mensaje"
-                                name="mensaje"
-                                rows="4"
-                                value={formData.mensaje}
-                                onChange={handleInputChange}
-                                required
-                            ></textarea>
-                            {errors.mensaje && <span className="error">El mensaje es requerido</span>}
-                        </div>
-
-                        <button type="submit" value="enviar">
-                            Enviar mensaje
-                        </button>
-                    </form>
-                </div>
-
+                    {/*mensaje del formulario */}
+                    <label htmlFor="message">Mensaje</label>
+                    <textarea id="message" name="message" />
+                    <ValidationError prefix="Message" field="message" errors={state.errors} />
+                    <button type="submit" disabled={state.submitting}>
+                        Enviar
+                    </button>
+                </form>
                 <div className="social-links">
                     <Link to="http://wa.link/ztvomc" className="whatsapp" title="whatsapp">
                         <i className="fa-brands fa-whatsapp"></i>
@@ -141,6 +64,10 @@ function Contacto() {
             </div>
         </>
     );
+}
+
+function Contacto() {
+    return <ContactForm />;
 }
 
 export default Contacto;

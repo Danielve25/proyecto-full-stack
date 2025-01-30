@@ -1,16 +1,15 @@
-import '../../css/contacto.css'
-import Footer from "../components/footer";
+import "../../css/contacto.css";
+import Footer from "../components/footer.jsx";
 import NavBar from "../components/NavBar";
 import Contacto from "./contacto";
 function Estructura_Contacto() {
     return (
         <>
-        
             <header>
-                <NavBar/>
+                <NavBar />
             </header>
             <main>
-                <Contacto/>
+                <Contacto />
             </main>
             <Footer />
         </>
