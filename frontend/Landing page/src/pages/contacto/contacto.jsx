@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router";
+import {useState} from "react";
+import {Link} from "react-router";
+import {useForm, ValidationError} from "@formspree/react";
 
 function Contacto() {
     const [formData, setFormData] = useState({
@@ -17,9 +18,9 @@ function Contacto() {
     });
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-        setErrors({ ...errors, [name]: false });
+        const {name, value} = e.target;
+        setFormData({...formData, [name]: value});
+        setErrors({...errors, [name]: false});
     };
 
     const validateForm = () => {
@@ -38,7 +39,7 @@ function Contacto() {
         e.preventDefault();
         if (validateForm()) {
             alert("Mensaje enviado correctamente!");
-            setFormData({ nombre: "", email: "", asunto: "", mensaje: "" });
+            setFormData({nombre: "", email: "", asunto: "", mensaje: ""});
         }
     };
 
@@ -60,7 +61,11 @@ function Contacto() {
 
                 <div className="contact-form">
                     <h3>Envíanos un mensaje</h3>
-                    <form onSubmit={handleSubmit}>
+                    <form
+                        action="https://formsubmit.co/dulzura.vallecaucana@gmail.com"
+                        method="POST"
+                        onSubmit={handleSubmit}
+                    >
                         <div className="form-group">
                             <label>Nombre completo</label>
                             <input
@@ -71,9 +76,7 @@ function Contacto() {
                                 onChange={handleInputChange}
                                 required
                             />
-                            {errors.nombre && (
-                                <span className="error">El nombre es requerido</span>
-                            )}
+                            {errors.nombre && <span className="error">El nombre es requerido</span>}
                         </div>
 
                         <div className="form-group">
@@ -86,9 +89,7 @@ function Contacto() {
                                 onChange={handleInputChange}
                                 required
                             />
-                            {errors.email && (
-                                <span className="error">Email inválido</span>
-                            )}
+                            {errors.email && <span className="error">Email inválido</span>}
                         </div>
 
                         <div className="form-group">
@@ -101,9 +102,7 @@ function Contacto() {
                                 onChange={handleInputChange}
                                 required
                             />
-                            {errors.asunto && (
-                                <span className="error">El asunto es requerido</span>
-                            )}
+                            {errors.asunto && <span className="error">El asunto es requerido</span>}
                         </div>
 
                         <div className="form-group">
@@ -116,12 +115,12 @@ function Contacto() {
                                 onChange={handleInputChange}
                                 required
                             ></textarea>
-                            {errors.mensaje && (
-                                <span className="error">El mensaje es requerido</span>
-                            )}
+                            {errors.mensaje && <span className="error">El mensaje es requerido</span>}
                         </div>
 
-                        <button type="submit">Enviar mensaje</button>
+                        <button type="submit" value="enviar">
+                            Enviar mensaje
+                        </button>
                     </form>
                 </div>
 
