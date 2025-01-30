@@ -10,6 +10,7 @@ function ContactForm() {
                 <div className="Confirm-mensaje">
                     <h1>gracias por elegirnos</h1>
                     <button onClick={reset}>Enviar otro formulario</button>
+                
                 </div>
             </>
         );
