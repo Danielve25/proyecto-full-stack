@@ -1,6 +1,6 @@
 import React from "react";
 import {useForm, ValidationError} from "@formspree/react";
-import { Link } from "react-router";
+import {Link} from "react-router";
 function ContactForm() {
     const [state, handleSubmit, reset] = useForm(import.meta.env.VITE_FORM_ID);
     if (state.succeeded) {
@@ -10,7 +10,6 @@ function ContactForm() {
                 <div className="Confirm-mensaje">
                     <h1>gracias por elegirnos</h1>
                     <button onClick={reset}>Enviar otro formulario</button>
-                
                 </div>
             </>
         );
